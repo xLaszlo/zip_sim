@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. 
+{
+    "name": "Ubuntu",
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {}
+    },
+    "customizations": {
+        "codespaces": {
+            "openFiles": [
+                "README.md"
+            ]
+        },
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-vsliveshare.vsliveshare"
+            ]
+        }
+    },
+    "remoteEnv": {
+        "JUPYTER_CONFIG_DIR": "."
+    },
+    "updateContentCommand": "bash .devcontainer/setup.sh"
+}

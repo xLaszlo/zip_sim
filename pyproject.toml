@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "CQ4DS"
+version = "0.1.0"
+description = "GitHub Codespaces template environment. Join the [https://cq4ds.com/](https://cq4ds.com/) community!"
+authors = ["Your Name <yourname@gmail.com>"]
+readme = "README.md"
+packages = [{include = "titanic"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+black = "^23.3.0"
+typer = "^0.9.0"
+pydantic = "^2.0.2"
+sqlalchemy = "^2.0.16"
+numpy = "^1.24.3"
+pandas = "^2.0.2"
+scikit-learn = "^1.2.2"
+jupyter = "^1.0.0"
+pre-commit = "^3.3.2"
+ruff = "^0.0.272"
+pytest = "^7.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+skip-string-normalization = true
+line-length = 120
+
+[tool.ruff]
+# Same as Black.
+line-length = 120
+
+exclude = ["jupyter_notebook_config.py"]
+select = [
+    "E",  # pycodestyle errors (settings from FastAPI, thanks, @tiangolo!)
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "C901",  # too complex
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]

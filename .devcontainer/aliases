@@ -1,0 +1,14 @@
+# from .devcontainer/aliases
+alias gs='git status'
+alias gb='git branch'
+alias gbr='git branch --remote'
+alias ll='ls -alF'
+alias venv='source .venv/bin/activate'
+alias deac='deactivate'
+alias pt='poetry run pytest'
+alias ckb='cp .devcontainer/keybindings.json /home/vscode/.vscode-remote/data/User/'
+source /usr/share/bash-completion/completions/git
+
+function prp() {
+    poetry run python "$@"
+}
